@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.WeixiujlMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Weixiujl" >
+    <id column="weixiujlId" property="weixiujlid" jdbcType="INTEGER" />
+    <result column="khclId" property="khclid" jdbcType="INTEGER" />
+    <result column="weixiujlBm" property="weixiujlbm" jdbcType="VARCHAR" />
+    <result column="weixiujlName" property="weixiujlname" jdbcType="VARCHAR" />
+    <result column="weixiujlPice" property="weixiujlpice" jdbcType="DECIMAL" />
+    <result column="weixiujlhyj" property="weixiujlhyj" jdbcType="DECIMAL" />
+    <result column="weixiujlvipj" property="weixiujlvipj" jdbcType="DECIMAL" />
+    <result column="weixiujlxyj" property="weixiujlxyj" jdbcType="DECIMAL" />
+    <result column="weixiujlbz" property="weixiujlbz" jdbcType="VARCHAR" />
+    <result column="weixiujlzt" property="weixiujlzt" jdbcType="INTEGER" />
+    <result column="weixiujlfg" property="weixiujlfg" jdbcType="VARCHAR" />
+    <result column="weixiuzrr" property="weixiuzrr" jdbcType="VARCHAR" />
+    <result column="weixiucfje" property="weixiucfje" jdbcType="DECIMAL" />
+    <result column="weixiucgcs" property="weixiucgcs" jdbcType="INTEGER" />
+    <result column="weixiutype" property="weixiutype" jdbcType="INTEGER" />
+    <result column="weixiulic" property="weixiulic" jdbcType="DECIMAL" />
+    <result column="weixiujg" property="weixiujg" jdbcType="DECIMAL" />
+    <result column="starttime" property="starttime" jdbcType="DATE" />
+    <result column="endstart" property="endstart" jdbcType="DATE" />
+    <result column="bz1" property="bz1" jdbcType="INTEGER" />
+    <result column="bz2" property="bz2" jdbcType="INTEGER" />
+    <result column="bz3" property="bz3" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    weixiujlId, khclId, weixiujlBm, weixiujlName, weixiujlPice, weixiujlhyj, weixiujlvipj, 
+    weixiujlxyj, weixiujlbz, weixiujlzt, weixiujlfg, weixiuzrr, weixiucfje, weixiucgcs, 
+    weixiutype, weixiulic, weixiujg, starttime, endstart, bz1, bz2, bz3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from weixiujl
+    where weixiujlId = #{weixiujlid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from weixiujl
+    where weixiujlId = #{weixiujlid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Weixiujl" >
+    insert into weixiujl (weixiujlId, khclId, weixiujlBm, 
+      weixiujlName, weixiujlPice, weixiujlhyj, 
+      weixiujlvipj, weixiujlxyj, weixiujlbz, 
+      weixiujlzt, weixiujlfg, weixiuzrr, 
+      weixiucfje, weixiucgcs, weixiutype, 
+      weixiulic, weixiujg, starttime, 
+      endstart, bz1, bz2, bz3
+      )
+    values (#{weixiujlid,jdbcType=INTEGER}, #{khclid,jdbcType=INTEGER}, #{weixiujlbm,jdbcType=VARCHAR}, 
+      #{weixiujlname,jdbcType=VARCHAR}, #{weixiujlpice,jdbcType=DECIMAL}, #{weixiujlhyj,jdbcType=DECIMAL}, 
+      #{weixiujlvipj,jdbcType=DECIMAL}, #{weixiujlxyj,jdbcType=DECIMAL}, #{weixiujlbz,jdbcType=VARCHAR}, 
+      #{weixiujlzt,jdbcType=INTEGER}, #{weixiujlfg,jdbcType=VARCHAR}, #{weixiuzrr,jdbcType=VARCHAR}, 
+      #{weixiucfje,jdbcType=DECIMAL}, #{weixiucgcs,jdbcType=INTEGER}, #{weixiutype,jdbcType=INTEGER}, 
+      #{weixiulic,jdbcType=DECIMAL}, #{weixiujg,jdbcType=DECIMAL}, #{starttime,jdbcType=DATE}, 
+      #{endstart,jdbcType=DATE}, #{bz1,jdbcType=INTEGER}, #{bz2,jdbcType=INTEGER}, #{bz3,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Weixiujl" >
+    insert into weixiujl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="weixiujlid != null" >
+        weixiujlId,
+      </if>
+      <if test="khclid != null" >
+        khclId,
+      </if>
+      <if test="weixiujlbm != null" >
+        weixiujlBm,
+      </if>
+      <if test="weixiujlname != null" >
+        weixiujlName,
+      </if>
+      <if test="weixiujlpice != null" >
+        weixiujlPice,
+      </if>
+      <if test="weixiujlhyj != null" >
+        weixiujlhyj,
+      </if>
+      <if test="weixiujlvipj != null" >
+        weixiujlvipj,
+      </if>
+      <if test="weixiujlxyj != null" >
+        weixiujlxyj,
+      </if>
+      <if test="weixiujlbz != null" >
+        weixiujlbz,
+      </if>
+      <if test="weixiujlzt != null" >
+        weixiujlzt,
+      </if>
+      <if test="weixiujlfg != null" >
+        weixiujlfg,
+      </if>
+      <if test="weixiuzrr != null" >
+        weixiuzrr,
+      </if>
+      <if test="weixiucfje != null" >
+        weixiucfje,
+      </if>
+      <if test="weixiucgcs != null" >
+        weixiucgcs,
+      </if>
+      <if test="weixiutype != null" >
+        weixiutype,
+      </if>
+      <if test="weixiulic != null" >
+        weixiulic,
+      </if>
+      <if test="weixiujg != null" >
+        weixiujg,
+      </if>
+      <if test="starttime != null" >
+        starttime,
+      </if>
+      <if test="endstart != null" >
+        endstart,
+      </if>
+      <if test="bz1 != null" >
+        bz1,
+      </if>
+      <if test="bz2 != null" >
+        bz2,
+      </if>
+      <if test="bz3 != null" >
+        bz3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="weixiujlid != null" >
+        #{weixiujlid,jdbcType=INTEGER},
+      </if>
+      <if test="khclid != null" >
+        #{khclid,jdbcType=INTEGER},
+      </if>
+      <if test="weixiujlbm != null" >
+        #{weixiujlbm,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlname != null" >
+        #{weixiujlname,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlpice != null" >
+        #{weixiujlpice,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlhyj != null" >
+        #{weixiujlhyj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlvipj != null" >
+        #{weixiujlvipj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlxyj != null" >
+        #{weixiujlxyj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlbz != null" >
+        #{weixiujlbz,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlzt != null" >
+        #{weixiujlzt,jdbcType=INTEGER},
+      </if>
+      <if test="weixiujlfg != null" >
+        #{weixiujlfg,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiuzrr != null" >
+        #{weixiuzrr,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiucfje != null" >
+        #{weixiucfje,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiucgcs != null" >
+        #{weixiucgcs,jdbcType=INTEGER},
+      </if>
+      <if test="weixiutype != null" >
+        #{weixiutype,jdbcType=INTEGER},
+      </if>
+      <if test="weixiulic != null" >
+        #{weixiulic,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujg != null" >
+        #{weixiujg,jdbcType=DECIMAL},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endstart != null" >
+        #{endstart,jdbcType=DATE},
+      </if>
+      <if test="bz1 != null" >
+        #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        #{bz3,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Weixiujl" >
+    update weixiujl
+    <set >
+      <if test="khclid != null" >
+        khclId = #{khclid,jdbcType=INTEGER},
+      </if>
+      <if test="weixiujlbm != null" >
+        weixiujlBm = #{weixiujlbm,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlname != null" >
+        weixiujlName = #{weixiujlname,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlpice != null" >
+        weixiujlPice = #{weixiujlpice,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlhyj != null" >
+        weixiujlhyj = #{weixiujlhyj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlvipj != null" >
+        weixiujlvipj = #{weixiujlvipj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlxyj != null" >
+        weixiujlxyj = #{weixiujlxyj,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujlbz != null" >
+        weixiujlbz = #{weixiujlbz,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiujlzt != null" >
+        weixiujlzt = #{weixiujlzt,jdbcType=INTEGER},
+      </if>
+      <if test="weixiujlfg != null" >
+        weixiujlfg = #{weixiujlfg,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiuzrr != null" >
+        weixiuzrr = #{weixiuzrr,jdbcType=VARCHAR},
+      </if>
+      <if test="weixiucfje != null" >
+        weixiucfje = #{weixiucfje,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiucgcs != null" >
+        weixiucgcs = #{weixiucgcs,jdbcType=INTEGER},
+      </if>
+      <if test="weixiutype != null" >
+        weixiutype = #{weixiutype,jdbcType=INTEGER},
+      </if>
+      <if test="weixiulic != null" >
+        weixiulic = #{weixiulic,jdbcType=DECIMAL},
+      </if>
+      <if test="weixiujg != null" >
+        weixiujg = #{weixiujg,jdbcType=DECIMAL},
+      </if>
+      <if test="starttime != null" >
+        starttime = #{starttime,jdbcType=DATE},
+      </if>
+      <if test="endstart != null" >
+        endstart = #{endstart,jdbcType=DATE},
+      </if>
+      <if test="bz1 != null" >
+        bz1 = #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        bz2 = #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        bz3 = #{bz3,jdbcType=INTEGER},
+      </if>
+    </set>
+    where weixiujlId = #{weixiujlid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Weixiujl" >
+    update weixiujl
+    set khclId = #{khclid,jdbcType=INTEGER},
+      weixiujlBm = #{weixiujlbm,jdbcType=VARCHAR},
+      weixiujlName = #{weixiujlname,jdbcType=VARCHAR},
+      weixiujlPice = #{weixiujlpice,jdbcType=DECIMAL},
+      weixiujlhyj = #{weixiujlhyj,jdbcType=DECIMAL},
+      weixiujlvipj = #{weixiujlvipj,jdbcType=DECIMAL},
+      weixiujlxyj = #{weixiujlxyj,jdbcType=DECIMAL},
+      weixiujlbz = #{weixiujlbz,jdbcType=VARCHAR},
+      weixiujlzt = #{weixiujlzt,jdbcType=INTEGER},
+      weixiujlfg = #{weixiujlfg,jdbcType=VARCHAR},
+      weixiuzrr = #{weixiuzrr,jdbcType=VARCHAR},
+      weixiucfje = #{weixiucfje,jdbcType=DECIMAL},
+      weixiucgcs = #{weixiucgcs,jdbcType=INTEGER},
+      weixiutype = #{weixiutype,jdbcType=INTEGER},
+      weixiulic = #{weixiulic,jdbcType=DECIMAL},
+      weixiujg = #{weixiujg,jdbcType=DECIMAL},
+      starttime = #{starttime,jdbcType=DATE},
+      endstart = #{endstart,jdbcType=DATE},
+      bz1 = #{bz1,jdbcType=INTEGER},
+      bz2 = #{bz2,jdbcType=INTEGER},
+      bz3 = #{bz3,jdbcType=INTEGER}
+    where weixiujlId = #{weixiujlid,jdbcType=INTEGER}
+  </update>
+</mapper>

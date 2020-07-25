@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.JsxmMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Jsxm" >
+    <result column="jiesId" property="jiesid" jdbcType="INTEGER" />
+    <result column="jsxmId" property="jsxmid" jdbcType="INTEGER" />
+    <result column="jsxmName" property="jsxmname" jdbcType="VARCHAR" />
+    <result column="jsxmpice" property="jsxmpice" jdbcType="DECIMAL" />
+    <result column="bz1" property="bz1" jdbcType="INTEGER" />
+    <result column="bz2" property="bz2" jdbcType="INTEGER" />
+    <result column="bz3" property="bz3" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.accp.pojo.Jsxm" >
+    insert into jsxm (jiesId, jsxmId, jsxmName, 
+      jsxmpice, bz1, bz2, 
+      bz3)
+    values (#{jiesid,jdbcType=INTEGER}, #{jsxmid,jdbcType=INTEGER}, #{jsxmname,jdbcType=VARCHAR}, 
+      #{jsxmpice,jdbcType=DECIMAL}, #{bz1,jdbcType=INTEGER}, #{bz2,jdbcType=INTEGER}, 
+      #{bz3,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Jsxm" >
+    insert into jsxm
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jiesid != null" >
+        jiesId,
+      </if>
+      <if test="jsxmid != null" >
+        jsxmId,
+      </if>
+      <if test="jsxmname != null" >
+        jsxmName,
+      </if>
+      <if test="jsxmpice != null" >
+        jsxmpice,
+      </if>
+      <if test="bz1 != null" >
+        bz1,
+      </if>
+      <if test="bz2 != null" >
+        bz2,
+      </if>
+      <if test="bz3 != null" >
+        bz3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jiesid != null" >
+        #{jiesid,jdbcType=INTEGER},
+      </if>
+      <if test="jsxmid != null" >
+        #{jsxmid,jdbcType=INTEGER},
+      </if>
+      <if test="jsxmname != null" >
+        #{jsxmname,jdbcType=VARCHAR},
+      </if>
+      <if test="jsxmpice != null" >
+        #{jsxmpice,jdbcType=DECIMAL},
+      </if>
+      <if test="bz1 != null" >
+        #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        #{bz3,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.KhclMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Khcl" >
+    <id column="khclId" property="khclid" jdbcType="INTEGER" />
+    <result column="kehuId" property="kehuid" jdbcType="INTEGER" />
+    <result column="jiescph" property="jiescph" jdbcType="VARCHAR" />
+    <result column="khclpp" property="khclpp" jdbcType="VARCHAR" />
+    <result column="khcljsy" property="khcljsy" jdbcType="VARCHAR" />
+    <result column="khcldh" property="khcldh" jdbcType="VARCHAR" />
+    <result column="khclsr" property="khclsr" jdbcType="DATE" />
+    <result column="khcljcr" property="khcljcr" jdbcType="DATE" />
+    <result column="khcllc" property="khcllc" jdbcType="DOUBLE" />
+    <result column="khclrq" property="khclrq" jdbcType="DATE" />
+    <result column="bz1" property="bz1" jdbcType="INTEGER" />
+    <result column="bz2" property="bz2" jdbcType="INTEGER" />
+    <result column="bz3" property="bz3" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    khclId, kehuId, jiescph, khclpp, khcljsy, khcldh, khclsr, khcljcr, khcllc, khclrq, 
+    bz1, bz2, bz3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from khcl
+    where khclId = #{khclid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from khcl
+    where khclId = #{khclid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Khcl" >
+    insert into khcl (khclId, kehuId, jiescph, 
+      khclpp, khcljsy, khcldh, 
+      khclsr, khcljcr, khcllc, khclrq, 
+      bz1, bz2, bz3)
+    values (#{khclid,jdbcType=INTEGER}, #{kehuid,jdbcType=INTEGER}, #{jiescph,jdbcType=VARCHAR}, 
+      #{khclpp,jdbcType=VARCHAR}, #{khcljsy,jdbcType=VARCHAR}, #{khcldh,jdbcType=VARCHAR}, 
+      #{khclsr,jdbcType=DATE}, #{khcljcr,jdbcType=DATE}, #{khcllc,jdbcType=DOUBLE}, #{khclrq,jdbcType=DATE}, 
+      #{bz1,jdbcType=INTEGER}, #{bz2,jdbcType=INTEGER}, #{bz3,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Khcl" >
+    insert into khcl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="khclid != null" >
+        khclId,
+      </if>
+      <if test="kehuid != null" >
+        kehuId,
+      </if>
+      <if test="jiescph != null" >
+        jiescph,
+      </if>
+      <if test="khclpp != null" >
+        khclpp,
+      </if>
+      <if test="khcljsy != null" >
+        khcljsy,
+      </if>
+      <if test="khcldh != null" >
+        khcldh,
+      </if>
+      <if test="khclsr != null" >
+        khclsr,
+      </if>
+      <if test="khcljcr != null" >
+        khcljcr,
+      </if>
+      <if test="khcllc != null" >
+        khcllc,
+      </if>
+      <if test="khclrq != null" >
+        khclrq,
+      </if>
+      <if test="bz1 != null" >
+        bz1,
+      </if>
+      <if test="bz2 != null" >
+        bz2,
+      </if>
+      <if test="bz3 != null" >
+        bz3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="khclid != null" >
+        #{khclid,jdbcType=INTEGER},
+      </if>
+      <if test="kehuid != null" >
+        #{kehuid,jdbcType=INTEGER},
+      </if>
+      <if test="jiescph != null" >
+        #{jiescph,jdbcType=VARCHAR},
+      </if>
+      <if test="khclpp != null" >
+        #{khclpp,jdbcType=VARCHAR},
+      </if>
+      <if test="khcljsy != null" >
+        #{khcljsy,jdbcType=VARCHAR},
+      </if>
+      <if test="khcldh != null" >
+        #{khcldh,jdbcType=VARCHAR},
+      </if>
+      <if test="khclsr != null" >
+        #{khclsr,jdbcType=DATE},
+      </if>
+      <if test="khcljcr != null" >
+        #{khcljcr,jdbcType=DATE},
+      </if>
+      <if test="khcllc != null" >
+        #{khcllc,jdbcType=DOUBLE},
+      </if>
+      <if test="khclrq != null" >
+        #{khclrq,jdbcType=DATE},
+      </if>
+      <if test="bz1 != null" >
+        #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        #{bz3,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Khcl" >
+    update khcl
+    <set >
+      <if test="kehuid != null" >
+        kehuId = #{kehuid,jdbcType=INTEGER},
+      </if>
+      <if test="jiescph != null" >
+        jiescph = #{jiescph,jdbcType=VARCHAR},
+      </if>
+      <if test="khclpp != null" >
+        khclpp = #{khclpp,jdbcType=VARCHAR},
+      </if>
+      <if test="khcljsy != null" >
+        khcljsy = #{khcljsy,jdbcType=VARCHAR},
+      </if>
+      <if test="khcldh != null" >
+        khcldh = #{khcldh,jdbcType=VARCHAR},
+      </if>
+      <if test="khclsr != null" >
+        khclsr = #{khclsr,jdbcType=DATE},
+      </if>
+      <if test="khcljcr != null" >
+        khcljcr = #{khcljcr,jdbcType=DATE},
+      </if>
+      <if test="khcllc != null" >
+        khcllc = #{khcllc,jdbcType=DOUBLE},
+      </if>
+      <if test="khclrq != null" >
+        khclrq = #{khclrq,jdbcType=DATE},
+      </if>
+      <if test="bz1 != null" >
+        bz1 = #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        bz2 = #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        bz3 = #{bz3,jdbcType=INTEGER},
+      </if>
+    </set>
+    where khclId = #{khclid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Khcl" >
+    update khcl
+    set kehuId = #{kehuid,jdbcType=INTEGER},
+      jiescph = #{jiescph,jdbcType=VARCHAR},
+      khclpp = #{khclpp,jdbcType=VARCHAR},
+      khcljsy = #{khcljsy,jdbcType=VARCHAR},
+      khcldh = #{khcldh,jdbcType=VARCHAR},
+      khclsr = #{khclsr,jdbcType=DATE},
+      khcljcr = #{khcljcr,jdbcType=DATE},
+      khcllc = #{khcllc,jdbcType=DOUBLE},
+      khclrq = #{khclrq,jdbcType=DATE},
+      bz1 = #{bz1,jdbcType=INTEGER},
+      bz2 = #{bz2,jdbcType=INTEGER},
+      bz3 = #{bz3,jdbcType=INTEGER}
+    where khclId = #{khclid,jdbcType=INTEGER}
+  </update>
+</mapper>

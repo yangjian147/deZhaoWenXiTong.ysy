@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.accp.dao.YybbMapper" >
+  <resultMap id="BaseResultMap" type="com.accp.pojo.Yybb" >
+    <id column="yybbId" property="yybbid" jdbcType="INTEGER" />
+    <result column="yybbjccs" property="yybbjccs" jdbcType="INTEGER" />
+    <result column="yybbjscs" property="yybbjscs" jdbcType="INTEGER" />
+    <result column="yybbwxcs" property="yybbwxcs" jdbcType="INTEGER" />
+    <result column="yybbjrssxj" property="yybbjrssxj" jdbcType="DECIMAL" />
+    <result column="yybbzcjf" property="yybbzcjf" jdbcType="INTEGER" />
+    <result column="yybbhygs" property="yybbhygs" jdbcType="INTEGER" />
+    <result column="yybbfxcs" property="yybbfxcs" jdbcType="INTEGER" />
+    <result column="yybbznwx" property="yybbznwx" jdbcType="INTEGER" />
+    <result column="yybbzwwx" property="yybbzwwx" jdbcType="INTEGER" />
+    <result column="bz1" property="bz1" jdbcType="INTEGER" />
+    <result column="bz2" property="bz2" jdbcType="INTEGER" />
+    <result column="bz3" property="bz3" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    yybbId, yybbjccs, yybbjscs, yybbwxcs, yybbjrssxj, yybbzcjf, yybbhygs, yybbfxcs, yybbznwx, 
+    yybbzwwx, bz1, bz2, bz3
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from yybb
+    where yybbId = #{yybbid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from yybb
+    where yybbId = #{yybbid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.accp.pojo.Yybb" >
+    insert into yybb (yybbId, yybbjccs, yybbjscs, 
+      yybbwxcs, yybbjrssxj, yybbzcjf, 
+      yybbhygs, yybbfxcs, yybbznwx, 
+      yybbzwwx, bz1, bz2, 
+      bz3)
+    values (#{yybbid,jdbcType=INTEGER}, #{yybbjccs,jdbcType=INTEGER}, #{yybbjscs,jdbcType=INTEGER}, 
+      #{yybbwxcs,jdbcType=INTEGER}, #{yybbjrssxj,jdbcType=DECIMAL}, #{yybbzcjf,jdbcType=INTEGER}, 
+      #{yybbhygs,jdbcType=INTEGER}, #{yybbfxcs,jdbcType=INTEGER}, #{yybbznwx,jdbcType=INTEGER}, 
+      #{yybbzwwx,jdbcType=INTEGER}, #{bz1,jdbcType=INTEGER}, #{bz2,jdbcType=INTEGER}, 
+      #{bz3,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.accp.pojo.Yybb" >
+    insert into yybb
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="yybbid != null" >
+        yybbId,
+      </if>
+      <if test="yybbjccs != null" >
+        yybbjccs,
+      </if>
+      <if test="yybbjscs != null" >
+        yybbjscs,
+      </if>
+      <if test="yybbwxcs != null" >
+        yybbwxcs,
+      </if>
+      <if test="yybbjrssxj != null" >
+        yybbjrssxj,
+      </if>
+      <if test="yybbzcjf != null" >
+        yybbzcjf,
+      </if>
+      <if test="yybbhygs != null" >
+        yybbhygs,
+      </if>
+      <if test="yybbfxcs != null" >
+        yybbfxcs,
+      </if>
+      <if test="yybbznwx != null" >
+        yybbznwx,
+      </if>
+      <if test="yybbzwwx != null" >
+        yybbzwwx,
+      </if>
+      <if test="bz1 != null" >
+        bz1,
+      </if>
+      <if test="bz2 != null" >
+        bz2,
+      </if>
+      <if test="bz3 != null" >
+        bz3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="yybbid != null" >
+        #{yybbid,jdbcType=INTEGER},
+      </if>
+      <if test="yybbjccs != null" >
+        #{yybbjccs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbjscs != null" >
+        #{yybbjscs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbwxcs != null" >
+        #{yybbwxcs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbjrssxj != null" >
+        #{yybbjrssxj,jdbcType=DECIMAL},
+      </if>
+      <if test="yybbzcjf != null" >
+        #{yybbzcjf,jdbcType=INTEGER},
+      </if>
+      <if test="yybbhygs != null" >
+        #{yybbhygs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbfxcs != null" >
+        #{yybbfxcs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbznwx != null" >
+        #{yybbznwx,jdbcType=INTEGER},
+      </if>
+      <if test="yybbzwwx != null" >
+        #{yybbzwwx,jdbcType=INTEGER},
+      </if>
+      <if test="bz1 != null" >
+        #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        #{bz3,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.accp.pojo.Yybb" >
+    update yybb
+    <set >
+      <if test="yybbjccs != null" >
+        yybbjccs = #{yybbjccs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbjscs != null" >
+        yybbjscs = #{yybbjscs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbwxcs != null" >
+        yybbwxcs = #{yybbwxcs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbjrssxj != null" >
+        yybbjrssxj = #{yybbjrssxj,jdbcType=DECIMAL},
+      </if>
+      <if test="yybbzcjf != null" >
+        yybbzcjf = #{yybbzcjf,jdbcType=INTEGER},
+      </if>
+      <if test="yybbhygs != null" >
+        yybbhygs = #{yybbhygs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbfxcs != null" >
+        yybbfxcs = #{yybbfxcs,jdbcType=INTEGER},
+      </if>
+      <if test="yybbznwx != null" >
+        yybbznwx = #{yybbznwx,jdbcType=INTEGER},
+      </if>
+      <if test="yybbzwwx != null" >
+        yybbzwwx = #{yybbzwwx,jdbcType=INTEGER},
+      </if>
+      <if test="bz1 != null" >
+        bz1 = #{bz1,jdbcType=INTEGER},
+      </if>
+      <if test="bz2 != null" >
+        bz2 = #{bz2,jdbcType=INTEGER},
+      </if>
+      <if test="bz3 != null" >
+        bz3 = #{bz3,jdbcType=INTEGER},
+      </if>
+    </set>
+    where yybbId = #{yybbid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.accp.pojo.Yybb" >
+    update yybb
+    set yybbjccs = #{yybbjccs,jdbcType=INTEGER},
+      yybbjscs = #{yybbjscs,jdbcType=INTEGER},
+      yybbwxcs = #{yybbwxcs,jdbcType=INTEGER},
+      yybbjrssxj = #{yybbjrssxj,jdbcType=DECIMAL},
+      yybbzcjf = #{yybbzcjf,jdbcType=INTEGER},
+      yybbhygs = #{yybbhygs,jdbcType=INTEGER},
+      yybbfxcs = #{yybbfxcs,jdbcType=INTEGER},
+      yybbznwx = #{yybbznwx,jdbcType=INTEGER},
+      yybbzwwx = #{yybbzwwx,jdbcType=INTEGER},
+      bz1 = #{bz1,jdbcType=INTEGER},
+      bz2 = #{bz2,jdbcType=INTEGER},
+      bz3 = #{bz3,jdbcType=INTEGER}
+    where yybbId = #{yybbid,jdbcType=INTEGER}
+  </update>
+</mapper>
